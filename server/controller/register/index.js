@@ -13,7 +13,7 @@ const userRegistritionController = async (req, res) => {
     if (unhashedPassword != confirmation)
         return res.status(400).json({ message: "Confirmation is invalid!" });
 
-    const isUserDuplicated = User.findOne({ username });
+    const isUserDuplicated = await User.findOne({ username });
     if (isUserDuplicated)
         return res.status(400).json({ message: "User already exists!" });
 
