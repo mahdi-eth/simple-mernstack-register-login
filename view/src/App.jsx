@@ -34,7 +34,7 @@ export default function App() {
                 accept: "application/json"
             },
             body: JSON.stringify(data)
-        }).then((res) => console.log(res.message));
+        }).then((response) => response.json()).then((data) => console.log(data.message));;
     };
 
     const {
@@ -53,7 +53,7 @@ export default function App() {
                 accept: "application/json"
             },
             body: JSON.stringify(data)
-        }).then((res) => console.log(res.message));
+        }).then((response) => response.json()).then((data) => console.log(data.message));;
 
     return (
         <>
